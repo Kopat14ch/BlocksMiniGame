@@ -9,10 +9,10 @@ namespace Code.Gameplay.Features.Block.Behaviour
     {
         [SerializeField] private BlockViewBehaviourData _data;
         
-        private BlockViewService _viewService;
+        private IBlockViewService _viewService;
 
         [Inject]
-        private void Construct(BlockViewService viewService)
+        private void Construct(IBlockViewService viewService)
         {
             _viewService = viewService;
         }

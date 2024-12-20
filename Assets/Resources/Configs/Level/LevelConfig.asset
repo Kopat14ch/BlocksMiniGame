@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 680ee8c4b54f40458b1687fe1546c722, type: 3}
+  m_Name: LevelConfig
+  m_EditorClassIdentifier: 
+  _blockDatas:
+  - <Color>k__BackingField: {r: 0.8584906, g: 0.31990921, b: 0.31990921, a: 1}
+  - <Color>k__BackingField: {r: 0.41261208, g: 0.8113208, b: 0.38652548, a: 1}
+  - <Color>k__BackingField: {r: 0.21266466, g: 0.764151, b: 0.64334583, a: 1}
+  - <Color>k__BackingField: {r: 0.7647059, g: 0.36032352, b: 0.2117647, a: 1}
+  - <Color>k__BackingField: {r: 0.4677115, g: 0.7647059, b: 0.2117647, a: 1}
+  - <Color>k__BackingField: {r: 0.5660378, g: 0.11751553, b: 0.06140977, a: 1}
+  - <Color>k__BackingField: {r: 0.8363877, g: 0.47659308, b: 0.8490566, a: 1}
+  - <Color>k__BackingField: {r: 0.76711327, g: 0.19063722, b: 0.7924528, a: 1}
+  - <Color>k__BackingField: {r: 0.19215684, g: 0.7921569, b: 0.29987508, a: 1}
+  - <Color>k__BackingField: {r: 0.28257388, g: 0.4716981, b: 0.31594872, a: 1}
+  - <Color>k__BackingField: {r: 0.47058824, g: 0.28235295, b: 0.3749975, a: 1}
+  - <Color>k__BackingField: {r: 0.18098079, g: 0.6459226, b: 0.7830189, a: 1}
+  - <Color>k__BackingField: {r: 0.32013172, g: 0.5538892, b: 0.6226415, a: 1}
+  - <Color>k__BackingField: {r: 0.9245283, g: 0.23985407, b: 0.34962678, a: 1}
+  - <Color>k__BackingField: {r: 0.5647405, g: 0.2392157, b: 0.9254902, a: 1}
+  - <Color>k__BackingField: {r: 0.23076844, g: 0.16660734, b: 0.3018868, a: 1}
+  - <Color>k__BackingField: {r: 0.39021894, g: 0.49254024, b: 0.745283, a: 1}
+  - <Color>k__BackingField: {r: 0.8679245, g: 0.66156715, b: 0.20879315, a: 1}
+  - <Color>k__BackingField: {r: 0.8962264, g: 0.42329246, b: 0.08877714, a: 1}
+  - <Color>k__BackingField: {r: 0.4433962, g: 0.14849591, b: 0.17757446, a: 1}

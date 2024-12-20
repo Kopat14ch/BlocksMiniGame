@@ -1,23 +1,57 @@
 ﻿using Code.Gameplay.Features.Block.Data;
 using Code.Gameplay.Features.Block.Services;
+using Code.Gameplay.Features.Drag;
+using Code.Gameplay.Features.Drag.Services;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using Zenject;
 
 namespace Code.Gameplay.Features.Block.Behaviour
 {
-    [RequireComponent(typeof(BlockViewBehaviour))]
-    public class BlockBehaviour : MonoBehaviour
+    [RequireComponent(typeof(BlockViewBehaviour), typeof(RectTransform))]
+    public class BlockBehaviour : MonoBehaviour, IDraggable
     {
-        private BlockViewService _viewService;
         private BlockViewBehaviour _viewBehaviour;
+        private RectTransform _rectTransform;
+        private IDragService _dragService;
+
+        [Inject]
+        private void Construct(IDragService dragService)
+        {
+            _dragService = dragService;
+        }
         
         private void Awake()
         {
             _viewBehaviour = GetComponent<BlockViewBehaviour>();
+            _rectTransform = GetComponent<RectTransform>();
+        }
+        
+        public void OnBeginDrag(PointerEventData eventData)
+        {
+            _dragService.StartDrag(this);
+        }
+
+        public void OnDrag(PointerEventData eventData)
+        {
+            _dragService.Dragging();
+
+        }
+
+        public void OnEndDrag(PointerEventData eventData)
+        {
+            _dragService.EndDrag();
+
         }
 
         public void Init(BlockData data)
         {
             _viewBehaviour.Init(data);
         }
+
+        public RectTransform GetRectTransform() => 
+            _rectTransform;
+
+
     }
 }

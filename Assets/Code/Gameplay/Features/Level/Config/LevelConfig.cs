@@ -6,7 +6,7 @@ using UnityEngine.Serialization;
 namespace Code.Gameplay.Features.Level.Config
 {
     [CreateAssetMenu(menuName = "Configs/LevelConfig", fileName = "LevelConfig", order = 51)]
-    public class LevelConfig : ScriptableObject
+    public class LevelConfig : ScriptableObject, ILevelConfig
     {
         [SerializeField] private List<BlockData> _blockDatas;
 

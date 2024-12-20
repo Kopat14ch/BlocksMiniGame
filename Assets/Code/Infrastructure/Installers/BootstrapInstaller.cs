@@ -1,5 +1,6 @@
 using Code.Gameplay.Cameras.Provider;
-using Code.Gameplay.Features.Block.Services;
+using Code.Gameplay.Features.Drag.Services;
+using Code.Gameplay.Features.UserInput.Services;
 using Code.Gameplay.StaticData;
 using Code.Infrastructure.AssetManagement;
 using Code.Infrastructure.Loading;
@@ -14,7 +15,8 @@ namespace Code.Infrastructure.Installers
             BindCamera();
             BindInfrastructure();
             BindCommon();
-            BindCube();
+            BindInput();
+            BindDrag();
         }
 
         private void BindCamera()
@@ -34,9 +36,14 @@ namespace Code.Infrastructure.Installers
             Container.Bind<IStaticDataService>().To<StaticDataService>().AsSingle();
         }
 
-        private void BindCube()
+        private void BindInput()
         {
-            Container.Bind<IBlockViewService>().To<BlockViewService>().AsSingle();
+            Container.Bind<IInputService>().To<InputService>().AsSingle();
+        }
+
+        private void BindDrag()
+        {
+            Container.Bind<IDragService>().To<DragService>().AsSingle();
         }
 
         public void Initialize()
