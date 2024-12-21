@@ -1,5 +1,4 @@
 ﻿using Code.Gameplay.Features.Block.Data;
-using Code.Gameplay.Features.Block.Services;
 using Code.Gameplay.Features.Drag;
 using Code.Gameplay.Features.Drag.Services;
 using UnityEngine;
@@ -29,19 +28,17 @@ namespace Code.Gameplay.Features.Block.Behaviour
         
         public void OnBeginDrag(PointerEventData eventData)
         {
-            _dragService.StartDrag(this);
+            _dragService.StartDrag(this, eventData);
         }
 
         public void OnDrag(PointerEventData eventData)
         {
-            _dragService.Dragging();
-
+            _dragService.Dragging(eventData);
         }
 
         public void OnEndDrag(PointerEventData eventData)
         {
-            _dragService.EndDrag();
-
+            _dragService.EndDrag(eventData);
         }
 
         public void Init(BlockData data)

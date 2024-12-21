@@ -43,7 +43,7 @@ namespace Code.Infrastructure.Installers
 
         private void BindDrag()
         {
-            Container.Bind<IDragService>().To<DragService>().AsSingle();
+            Container.BindInterfacesTo<DragService>().AsSingle();
         }
 
         public void Initialize()
