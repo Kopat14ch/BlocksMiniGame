@@ -5,6 +5,6 @@ namespace Code.Gameplay.Features.Drag
 {
     public interface IDraggable : IBeginDragHandler, IDragHandler, IEndDragHandler
     {
-        public RectTransform GetRectTransform();
+        public bool IsCreated { get; }
     }
 }

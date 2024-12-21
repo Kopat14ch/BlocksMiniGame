@@ -21,13 +21,19 @@ namespace Code.Gameplay.Features.Block.Factory
                 throw new System.Exception("Block prefab not found");
         }
 
-        public BlockBehaviour Create(BlockData data, Transform parent)
+        public BlockBehaviour Create(BlockData data, Transform parent, Vector3 position = default, bool created = false)
         {
-            BlockBehaviour blockBehaviour = _container.InstantiatePrefabForComponent<BlockBehaviour>(_prefab, Vector3.zero, Quaternion.identity, parent);
-            blockBehaviour.Init(data);
-            blockBehaviour.SetDefaultTransform();
+            BlockBehaviour createdBlockBehaviour = _container.InstantiatePrefabForComponent<BlockBehaviour>(_prefab, Vector3.zero, Quaternion.identity, parent);
+            createdBlockBehaviour.Init(data);
+            createdBlockBehaviour.SetDefaultTransform();
+            createdBlockBehaviour.GetRectTransform().localPosition = position;
             
-            return blockBehaviour;
+            createdBlockBehaviour.SetPrePosition(position);
+
+            if (created)
+                createdBlockBehaviour.Create();
+            
+            return createdBlockBehaviour;
         }
     }
 }

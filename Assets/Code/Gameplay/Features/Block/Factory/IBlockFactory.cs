@@ -6,6 +6,6 @@ namespace Code.Gameplay.Features.Block.Factory
 {
     public interface IBlockFactory
     {
-        BlockBehaviour Create(BlockData data, Transform parent);
+        BlockBehaviour Create(BlockData data, Transform parent, Vector3 position = default, bool created = false);
     }
 }
